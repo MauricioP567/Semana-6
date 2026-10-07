@@ -7,21 +7,20 @@ import NotFound from './pages/NotFound'
 
 function App() {
   return (
-    <>
-      {/* Navbar presente en todas las rutas */}
+    <div className="app-shell">
       <Navbar />
-
-      <main style={{ padding: '2rem', maxWidth: '960px', margin: '0 auto' }}>
-        {/* Routes define qué componente renderizar según la URL */}
+      <main className="app-main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/list" element={<List />} />
           <Route path="/form" element={<Form />} />
-          {/* Ruta comodín para 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-    </>
+      <footer className="app-footer">
+        <p>Práctica Semana 06 · React + Vite + Axios · {new Date().getFullYear()}</p>
+      </footer>
+    </div>
   )
 }
 
